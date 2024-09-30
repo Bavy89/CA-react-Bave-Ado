@@ -71,8 +71,8 @@ const AllProducts = () => {
                     <div className="relative flex-grow">
                       <img
                         className="w-full h-40 object-cover object-center rounded"
-                        src={product.imageUrl}
-                        alt="Product Image"
+                        src={product.image.url}
+                        alt={product.image.alt}
                       />
                       {discountPercentage > 0 && (
                         <span className="bg-red-500 text-white text-xs font-semibold absolute top-2 right-2 py-1 px-2 rounded">
