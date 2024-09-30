@@ -39,7 +39,7 @@ const ProductDetail = () => {
           <div className="relative">
             <img
               className="w-full h-96 object-cover object-center rounded"
-              src={singleProduct.imageUrl}
+             src={singleProduct.image.url}
             />
           </div>
           <div className="px-2">
