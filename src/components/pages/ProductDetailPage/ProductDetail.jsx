@@ -37,10 +37,12 @@ const ProductDetail = () => {
       {singleProduct && !isError && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="relative">
-            <img
-              className="w-full h-96 object-cover object-center rounded"
-             src={singleProduct.data.image.url}
-            />
+<img
+  className="w-full h-96 object-cover object-center rounded"
+  src={singleProduct.data.image.url}
+  alt={singleProduct.data.image.alt}
+/>
+
           </div>
           <div className="px-2">
             <h2 className="text-gray-900 font-semibold text-lg">
