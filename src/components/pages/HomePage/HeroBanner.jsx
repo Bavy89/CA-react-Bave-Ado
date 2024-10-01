@@ -4,8 +4,8 @@ import HeroBannerImg from "../../../../public/assets/background-banner.jpg"; // 
 const HeroBanner = () => {
   return (
     <div
-    className="relative w-full h-80 md:h-96 lg:h-[50vh] flex flex-col items-center justify-center bg-cover bg-center"
-    style={{
+      className="relative w-full h-screen md:h-96 lg:h-[50vh] flex flex-col items-center justify-center bg-cover bg-center"
+      style={{
         backgroundImage: `url(${HeroBannerImg})`,
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
@@ -13,7 +13,8 @@ const HeroBanner = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="relative px-6 py-12 flex flex-col items-center justify-center bg-white bg-opacity-40 backdrop-blur-md">
+      {/* Content only visible on medium screens and larger */}
+      <div className="relative px-6 py-12 flex flex-col items-center justify-center bg-white bg-opacity-40 backdrop-blur-md hidden md:flex">
         <h1
           className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-gray-800"
           style={{
@@ -29,6 +30,8 @@ const HeroBanner = () => {
           Discover everything you need, from unique treasures to everyday essentials, curated just for you.
         </p>
       </div>
+
+      {/* Bottom icon */}
       <div className="absolute bottom-10 flex flex-col items-center justify-center">
         <svg
           className="w-11 h-11 text-green-600 animate-bounce"
