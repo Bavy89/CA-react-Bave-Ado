@@ -18,11 +18,11 @@ function CartItem({ item }) {
 
   return (
     <div className="flex items-center justify-between p-4 border-b border-gray-300">
-      <img
-        className="w-24 h-24 object-cover rounded-lg shadow-md"
-        src={item.imageUrl}
-        alt={item.title}
-      />
+<img
+  className="w-24 h-24 object-cover rounded-lg shadow-md"
+  src={item.image.url} 
+  alt={item.image.alt}   
+/>
       <div className="flex flex-col flex-1 ml-6">
         <span className="text-xl font-semibold text-gray-800">{item.title}</span>
         <div className="mt-2">{displayPrice(item)}</div>
