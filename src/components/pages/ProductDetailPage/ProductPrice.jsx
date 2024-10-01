@@ -21,10 +21,10 @@ const ProductPrice = ({ product }) => {
       {product.discountedPrice && product.discountedPrice < product.price ? (
         <>
           <span className="text-red-700 font-semibold">
-            {product.discountedPrice} $
+          $ {product.discountedPrice} 
           </span>
           <span className="text-gray-500 line-through ml-2">
-            {product.price} $
+          $ {product.price} 
           </span>
         </>
       ) : (
