@@ -69,7 +69,7 @@ const AllProducts = () => {
                 >
                   <div className="bg-white shadow-md rounded-lg p-4 h-full w-full flex flex-col">
                     <div className="relative flex-grow">
-                      <img
+                    <img
                         className="w-full h-40 object-cover object-center rounded"
                         src={product.image.url}
                         alt={product.image.alt}
@@ -88,15 +88,15 @@ const AllProducts = () => {
                         {discountPercentage > 0 ? (
                           <>
                             <span className="text-red-500 font-semibold">
-                              {product.discountedPrice} $
+                              ${product.discountedPrice}
                             </span>
                             <span className="text-gray-500 line-through ml-2">
-                              {product.price} $
+                              ${product.price}
                             </span>
                           </>
                         ) : (
                           <span className="text-gray-900 font-semibold">
-                            {product.price} $
+                            ${product.price}
                           </span>
                         )}
                       </div>
