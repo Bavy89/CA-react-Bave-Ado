@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductById } from "../../../store/modules/productSlice";
 import { addItemToCart } from "../../../store/modules/cartSlice";
@@ -13,10 +12,9 @@ import ErrorComponent from "../../global/ErrorComponent";
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { singleProduct } = useSelector((state) => state.products);
-  let { id } = useParams();
-  const { isError } = useSelector((state) => state.error);
-  const { errorMessage } = useSelector((state) => state.error);
+  const { isError, errorMessage } = useSelector((state) => state.error);
   const [buttonDisabled, setButtonDisabled] = useState(false);
+  let { id } = useParams();
 
   useEffect(() => {
     if (id) {
@@ -24,6 +22,7 @@ const ProductDetail = () => {
     }
   }, [dispatch, id]);
 
+  // Display loading message if singleProduct is still null
   if (!singleProduct) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -34,15 +33,21 @@ const ProductDetail = () => {
 
   return (
     <div className="bg-white md:p-4 max-w-3xl mx-4 md:mx-auto my-16 relative">
+      {/* Only render product details if not in an error state */}
       {singleProduct && !isError && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="relative">
-<img
-  className="w-full h-96 object-cover object-center rounded"
-  src={singleProduct.data.image.url}
-  alt={singleProduct.data.image.alt}
-/>
-
+            {singleProduct.image?.url ? (
+              <img
+                className="w-full h-96 object-cover object-center rounded"
+                src={singleProduct.image.url}
+                alt={singleProduct.image.alt || singleProduct.title}
+              />
+            ) : (
+              <div className="w-full h-96 flex items-center justify-center bg-gray-200 text-gray-500 rounded">
+                No Image Available
+              </div> // Fallback if image is not available
+            )}
           </div>
           <div className="px-2">
             <h2 className="text-gray-900 font-semibold text-lg">
@@ -69,13 +74,13 @@ const ProductDetail = () => {
                         : "bg-main hover:bg-lightblue focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 mx-2"
                     } text-white font-semibold text-sm py-2 px-4 mt-4 md:mt-0 rounded `}
                   >
-                    add to cart
+                    Add to Cart
                   </button>
                 </div>
                 <div>
                   <Link to="/products">
                     <button className="bg-main text-white font-semibold text-sm py-2 px-4 mt-4 md:mt-0 rounded hover:bg-lightblue focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1">
-                      More products
+                      More Products
                     </button>
                   </Link>
                 </div>
@@ -87,11 +92,8 @@ const ProductDetail = () => {
           </div>
         </div>
       )}
-      {isError && (
-        <>
-          <ErrorComponent message={errorMessage} />
-        </>
-      )}
+      {/* Error handling */}
+      {isError && <ErrorComponent message={errorMessage} />}
     </div>
   );
 };
