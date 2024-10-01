@@ -31,8 +31,8 @@ const HeroBanner = () => {
         </p>
       </div>
 
-      {/* Bottom icon */}
-      <div className="absolute bottom-10 flex flex-col items-center justify-center">
+      {/* Bottom icon, adjusted for visibility on mobile */}
+      <div className="absolute bottom-20 md:bottom-10 flex flex-col items-center justify-center">
         <svg
           className="w-11 h-11 text-green-600 animate-bounce"
           fill="none"
