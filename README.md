@@ -6,53 +6,19 @@
 [![Created using HTML](https://img.shields.io/badge/Made%20with-HTML-E34F26?logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![Developed with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite)](https://vitejs.dev/)
 
-# Project Holidaze
 
-A modern venue booking platform built with React where users can discover, book venues, and venue managers can list their properties.
-
-## Description
-
-Holidaze is a web application that serves as a marketplace for venue bookings. The platform connects users looking to book venues with venue managers who list their properties. Built with React and modern web technologies, it offers a seamless experience for both customers and venue managers.
-
-## Features
-
-### User Features
-- Browse available venues
-- Search and filter venues
-- View detailed venue information
-- Book venues
-- User authentication (login/signup)
-- View booking history
-- Create user profile
-
-### Venue Manager Features
-- Create and list new venues
-- Manage venue listings
-- View booking requests
-- Update venue information
-- Manage venue availability
-
-## Tech Stack
-
-- React 18
-- React Router for navigation
-- React Hook Form for form management
-- Yup for form validation
-- Tailwind CSS for styling
-- Vite as build tool
+- **Homepage 🏠**: Displays all available products and includes a predictive search bar for quick filtering.
+- **Cart Page 🛒**: Shows all items added to the cart and calculates the total. Hitting the "Checkout" button redirects to the order confirmation page.
+- **Product Detail Page 🛍️**: Provides detailed information for each product, such as name, description, and image. It also lists any available customer reviews.
+- **Order Success Page 🎉**: Confirms a successful purchase and offers a link to return to the store.
+- **Contact Us Page 📞**: Features a contact form with built-in validation.
 
 ## Getting Started
 
-### Prerequisites
 
-- Node.js (Latest LTS version)
-- npm or yarn package manager
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/holidaze.git
 
 ## Quick Start Guide 🚀
 
