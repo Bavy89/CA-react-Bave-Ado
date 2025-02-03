@@ -2,6 +2,9 @@
 
 ![Bave Ado Shopping Preview](https://raw.githubusercontent.com/Bavy89/CA-react-Bave-Ado/refs/heads/main/Preview%20image/Website%20preview.png)
 
+🌐 [Live Preview](https://baveadoshop.netlify.app/)
+
+
 [![Powered by React](https://img.shields.io/badge/Made%20with-React-61dafb.svg)](https://reactjs.org/)
 [![Built with Redux](https://img.shields.io/badge/Made%20with-Redux-764abc.svg)](https://redux.js.org/)
 [![Styled with Tailwind CSS](https://img.shields.io/badge/Built%20with-Tailwind%20CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
